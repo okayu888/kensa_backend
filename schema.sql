@@ -23,11 +23,14 @@ DROP TABLE IF EXISTS exams;
 
 CREATE TABLE exams (
   exam_id TEXT PRIMARY KEY,
+  patient_id INTEGER NOT NULL,
   exam_date TEXT NOT NULL,
   exam_time TEXT NOT NULL,
   laxative_type TEXT,
-  note TEXT
+  note TEXT,
+  FOREIGN KEY (patient_id) REFERENCES patients (patient_id)
 );
+
 
 -- =========================
 -- 記録ログテーブル

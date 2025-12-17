@@ -1,7 +1,9 @@
 import sqlite3
 from pathlib import Path
 
-DB_PATH = Path("kensa.db")
+BASE_DIR = Path(__file__).resolve().parent
+DB_PATH = BASE_DIR / "kensa.db"
+
 
 def main():
     conn = sqlite3.connect(DB_PATH)
