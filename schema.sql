@@ -43,7 +43,7 @@ CREATE TABLE logs (
   created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
   category TEXT NOT NULL,   -- laxative / stool / symptom
   label TEXT,               -- 腹痛・吐き気・その他（症状のみ）
-  count INTEGER NOT NULL,   -- カウント
+  count INTEGER DEFAULT 1,   -- カウント
   note TEXT,
   FOREIGN KEY (exam_id) REFERENCES exams (exam_id)
 );
